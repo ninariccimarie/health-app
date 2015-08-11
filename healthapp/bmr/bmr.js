@@ -2,10 +2,10 @@
 	'use strict';
 
 	angular
-		.module('app.bmr')
+		.module('app.core')
 		.controller('Bmr', Bmr);
 
-		function bmr(dataservice) {
+		function Bmr(dataservice) {
 			var vm = this;
 
 			function calcBMR() {

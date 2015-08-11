@@ -2,10 +2,10 @@
 	'use strict';
 
 	angular
-		.module('app.bmi')
+		.module('app.core')
 		.controller('Bmi', Bmi);
 
-		function bmi(dataservice) {
+		function Bmi(dataservice) {
 
 			var vm = this;
 

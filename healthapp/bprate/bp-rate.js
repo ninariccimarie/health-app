@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('app.bprate')
+		.module('app.core')
 		.controller('BpRate', BpRate);
 
 
 
-	function bpRate() {
+	function BpRate() {
 		if ($scope.systolic <= 120 && $scope.diastolic <= 80) {
 			return ("Normal");
 		} else if ($scope.systolic >= 120 && $scope.systolic < 140 && $scope.diastolic >= 80 && $scope.diastolic < 90) {
