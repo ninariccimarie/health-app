@@ -8,8 +8,7 @@
 		function bmi(dataservice) {
 
 			var vm = this;
-			vm.bmi = [];
-			vm.title = "BMI";
+
 
 			function calcBMI() {
 				return dataservice.calcBMI().then(function(data) {

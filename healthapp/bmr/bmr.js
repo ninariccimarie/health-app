@@ -7,8 +7,6 @@
 
 		function bmr(dataservice) {
 			var vm = this;
-			vm.bmr = [];
-			vm.title = "BMR";
 
 			function calcBMR() {
 				return dataservice.calcBMR().then(function(data) {
