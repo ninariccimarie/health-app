@@ -5,10 +5,16 @@
 		.module('app.core')
 		.factory('dataservice', function(){
 
-			function calcBMI() {
-				$scope.BMI = ($scope.weight * 703) / $scope.height / $scope.height;
-				var BMI = $scope.BMI;
-				return(BMI)
+			var service = {
+                calcBMI: calcBMI,
+                calcDKR: calcDKR,
+                calcBMR: calcBMR
+
+            };
+
+            function calcBMI(weight, height) {
+				var bmi = (weight  / (height * height)) * 703;
+				return bmi ;
 			}
 
 			function calcDKR(){
@@ -28,9 +34,9 @@
 				}
 				$scope.BMR = BMR;
 				return(BMR);
-				}
-				
-		return('dataservice');
+            }
+
+            return service;
 
 		});
 })();
