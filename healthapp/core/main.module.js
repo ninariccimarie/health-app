@@ -1,7 +1,8 @@
 (function() {
 	'use strict';
 
-	angular.module('healthApp', [
-		'app.core'
+	angular.module('app.core', [
+		'chart.js',
+		'ui.bootstrap'
 		]);
 })();

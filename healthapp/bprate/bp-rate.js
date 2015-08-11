@@ -5,9 +5,9 @@
 		.module('app.core')
 		.controller('BpRate', BpRate);
 
+		BpRate.$inject = ['$scope'];
 
-
-	function BpRate() {
+	function BpRate($scope) {
 		if ($scope.systolic <= 120 && $scope.diastolic <= 80) {
 			return ("Normal");
 		} else if ($scope.systolic >= 120 && $scope.systolic < 140 && $scope.diastolic >= 80 && $scope.diastolic < 90) {

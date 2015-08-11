@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div class="navbar navbar-default navbar-fixed-top">
-		<div class="container" ng-controller="MenuCtrl">
+		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
 					<span class="sr-only">Toggle navigation</span>
@@ -119,26 +119,26 @@
 		<div ng-controller ="Bmr">
 			<label>Basal Metabolic Rate:</label><span>{{ calcBMR() | number:2 }}</span><br />
 		</div>
-		<div ng-controller ="Dkr">
+		<!-- <div ng-controller ="dkr">
 		<label>Daily Kilocalorie Requirements:</label><span>{{ calcDKR() | number:2 }}</span><br />
 		</div>
 		<label>Target Heart Rate (50%-85%):</label><span>{{ rateTHR() }}</span>
-		</div>
+		</div> -->
 		</div>
 	</div>
 	</div>
 
 	<div id="activities">
-	<div class="col-lg-6 col-sm-12" id="radar-chart" ng-controller="RadarCtrl">
+	<!-- <div class="col-lg-6 col-sm-12" id="radar-chart" ng-controller="RadarCtrl">
 		<div class="panel panel-default">
 			<div class="panel-heading">Daily Activities</div>
 			<div class="panel-body">
 				<canvas id="area" class="chart chart-radar" data="data" labels="labels" click="onClick"></canvas>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
-	<div class="row" ng-controller="DataTablesCtrl">
+	<!-- <div class="row" ng-controller="DataTablesCtrl">
 		<div class="col-lg-6 col-sm-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">Chart Data</div>
@@ -148,8 +148,8 @@
 							<th ng-repeat="label in labels">{{label}}</th>
 						</tr>
 						<tr ng-repeat="dataSet in data">
-                  			<td ng-repeat="set in dataSet track by $index"><span style="text-align: right;">{{data[$parent.$index][$index]}}</span></td>
-                		</tr>
+	                  			<td ng-repeat="set in dataSet track by $index"><span style="text-align: right;">{{data[$parent.$index][$index]}}</span></td>
+	                		</tr>
 					</table>
 					<button type="button" class="btn btn-primary pull-right" ng-click="randomize()">Randomize</button>
 				</div>
@@ -163,7 +163,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	</div>
 
     <!-- angular dependency -->
@@ -179,13 +179,12 @@
     <!-- main module -->
         <script src="healthapp.module.js"></script>
         <script src="core/core.module.js"></script>
-
-
+        <script src="core/dataservice.js"></script>
     <!-- scripts -->
         <script src="bmi/bmi.js"></script>
         <script src="bmr/bmr.js"></script>
         <script src="bprate/bp-rate.js"></script>
-        <script src="dkr/dkr.js"></script>
+      <!--  <script src="dkr/dkr.js"></script> -->
 
 </body>
 </html>

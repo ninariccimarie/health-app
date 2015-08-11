@@ -5,6 +5,8 @@
 		.module('app.core')
 		.controller('Bmi', Bmi);
 
+		Bmi.$inject = ['dataservice'];
+
 		function Bmi(dataservice) {
 
 			var vm = this;
@@ -15,6 +17,7 @@
 					vm.bmi = data;
 					return vm.bmi;
 				});
+
 			}
 
 			function rateBMI() {
