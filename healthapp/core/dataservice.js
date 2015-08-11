@@ -8,34 +8,34 @@
 
 			var service = {
                 calcBMI: calcBMI,
-                calcDKR: calcDKR,
-                calcBMR: calcBMR
+                calcBMR: calcBMR,
+                calcDKR: calcDKR
             };
 
 			
             function calcBMI(weight, height) {
 				var bmi = (weight  / (height * height)) * 703;
-				return bmi ;
+				return(bmi);
 
 			}
 
 			function calcBMR(gender, weight, height, age){
-				var BMR = this;
+				var bmr = this;
 
 				if (gender == 'male') {
-				BMR = 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age);
+				bmr = 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age);
 				} else {
-				BMR = 655 + (4.35 * weight) + (4.7 * height) - (4.7 * age);
+				bmr = 655 + (4.35 * weight) + (4.7 * height) - (4.7 * age);
 				}
-				
-				return(BMR);
-
+				return(bmr);
 				}
 
-			function calcDKR(){
-				$scope.DKR = $scope.BMR * $scope.exercise;
-				var DKR = $scope.DKR;
-				return(DKR);
+			function calcDKR(exercise,$scope){
+				var dkr = this;
+				$scope.calcBMR = calcBMR;
+
+				dkr = calcBMR * exercise;
+				return(dkr);
 			}
 
             return service;

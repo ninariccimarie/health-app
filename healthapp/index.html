@@ -122,11 +122,12 @@
 			<label>Basal Metabolic Rate:</label><span>{{ answer | number:2 }}</span><br />
 			<button ng-click="getBmr()">Compute</button>
 		</div>
-		<!-- <div ng-controller ="dkr">
-		<label>Daily Kilocalorie Requirements:</label><span>{{ calcDKR() | number:2 }}</span><br />
+		<div ng-controller ="Dkr">
+		<label>Daily Kilocalorie Requirements:</label><span>{{ answer | number:2 }}</span><br />
+		<button ng-click="getDkr()">Compute</button>
 		</div>
 		<label>Target Heart Rate (50%-85%):</label><span>{{ rateTHR() }}</span>
-		</div> -->
+		</div>
 		</div>
 	</div>
 	</div>
@@ -187,7 +188,7 @@
         <script src="bmi/bmi.js"></script>
         <script src="bmr/bmr.js"></script>
         <script src="bprate/bp-rate.js"></script>
-      <!--  <script src="dkr/dkr.js"></script> -->
+        <script src="dkr/dkr.js"></script>
 
 </body>
 </html>
