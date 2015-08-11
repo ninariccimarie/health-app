@@ -1,9 +1,8 @@
 (function(){
 	'use strict';
 
-	angular
-		.module('app.bmi')
-		.controller('Bmi', Bmi);
+	angular.module('app.bmi')
+		   .controller('Bmi', Bmi);
 
 		function bmi(dataservice) {
 
