@@ -119,7 +119,8 @@
 			<label>Blood Pressure Category:</label><span ng-show="systolic && diastolic">{{ bpRate() }}</span><br />
 		</div>
 		<div ng-controller ="Bmr">
-			<label>Basal Metabolic Rate:</label><span>{{ calcBMR() | number:2 }}</span><br />
+			<label>Basal Metabolic Rate:</label><span>{{ answer | number:2 }}</span><br />
+			<button ng-click="getBmr()">Compute</button>
 		</div>
 		<!-- <div ng-controller ="dkr">
 		<label>Daily Kilocalorie Requirements:</label><span>{{ calcDKR() | number:2 }}</span><br />
