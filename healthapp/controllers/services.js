@@ -4,5 +4,5 @@ healthApp.factory('UsersFactory', function() {
 	return $resource(''), {}, {
 		query: { method: 'GET', isArray: true},
 		create: { method: 'POST'}
-	})
+	};
 });

@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('app.dkr')
+		.module('app.core')
 		.controller('dkr', dkr);
 
 		function dkr(dataservice) {

@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('app.bmr')
+		.module('app.core')
 		.controller('Bmr', Bmr);
 
 		function bmr(dataservice) {

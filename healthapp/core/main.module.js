@@ -1,8 +1,7 @@
 (function() {
 	'use strict';
 
-	angular.module('app', [
-		'app.core',
-		'app.bmi'
+	angular.module('healthApp', [
+		'app.core'
 		]);
 })();

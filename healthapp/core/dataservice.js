@@ -6,9 +6,12 @@
 		.factory('dataservice', dataservice);
 
 	function dataservice($scope) {
+
 		var service = {
 			calcBMI: calcBMI
 		}
+
+        return service;
 
 		function calcBMI(){
 			$scope.BMI = ($scope.weight * 703) / $scope.height / $scope.height;
