@@ -14,7 +14,7 @@
 
 			function calcBMI() {
 				return dataservice.calcBMI().then(function(data) {
-					vm.bmi = data;
+					vm.bmi = calcBMI;
 					return vm.bmi;
 				});
 
