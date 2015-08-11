@@ -1,14 +1,14 @@
 (function(){
 	'use strict';
 
-	angular.module('app.core')
-		   .controller('Bmi', Bmi);
+	angular
+		.module('app.core')
+		.controller('Bmi', Bmi);
 
 		function Bmi(dataservice) {
 
 			var vm = this;
-			vm.bmi = [];
-			vm.title = "BMI";
+
 
 			function calcBMI() {
 				return dataservice.calcBMI().then(function(data) {

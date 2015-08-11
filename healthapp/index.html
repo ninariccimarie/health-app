@@ -10,11 +10,6 @@
   	<link href="bower_components/angular-chart.js/examples/app.css" rel="stylesheet">-->
   	<link rel="stylesheet" href="style.css">
 
-
-
-
-
-
 </head>
 <body>
 	<div class="navbar navbar-default navbar-fixed-top">
@@ -50,7 +45,7 @@
 		</div>
 	</div>
 
-	<div id="user" ng-controller="BMICtrl">
+	<div id="user">
 		<div class="col-lg-4 col-md-6 col-sm-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">Health Status</div>
@@ -80,45 +75,47 @@
 				</div>
 			</div>
 
-			<div class="col-lg-4 col-md-6 col-sm-12 weight">
-				<div class="panel panel-default">
-					<div class="panel-heading">Weight</div>
-					<div class="panel=body">
-						<p> </p>
-						<span ng-show="weight"> {{ weight }} lbs</span>
+			<div ng-controller="Bmi">
+				<div class="col-lg-4 col-md-6 col-sm-12 weight">
+					<div class="panel panel-default">
+						<div class="panel-heading">Weight</div>
+						<div class="panel=body">
+							<p> </p>
+							<span ng-show="weight"> {{ weight }} lbs</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 col-sm-12 height">
+					<div class="panel panel-default">
+						<div class="panel-heading">Height</div>
+						<div class="panel=body">
+							<p> </p>
+							<span ng-show="height"> {{ height }} inches</span>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-lg-4 col-md-6 col-sm-12 bmi">
+					<div class="panel panel-default">
+						<div class="panel-heading">Body Mass Index</div>
+						<div class="panel=body">
+							<p> </p>
+							<span ng-show="weight && height"> {{ calcBMI() | number:2}}, {{ rateBMI() }}</span>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-lg-4 col-md-6 col-sm-12 height">
-				<div class="panel panel-default">
-					<div class="panel-heading">Height</div>
-					<div class="panel=body">
-						<p> </p>
-						<span ng-show="height"> {{ height }} inches</span>
-					</div>
-				</div>
-			</div>
-
-
-			<div class="col-lg-4 col-md-6 col-sm-12 bmi">
-				<div class="panel panel-default">
-					<div class="panel-heading">Body Mass Index</div>
-					<div class="panel=body">
-						<p> </p>
-						<span ng-show="weight && height"> {{ calcBMI() | number:2}}, {{ rateBMI() }}</span>
-					</div>
-				</div>
-			</div>
-
-	<div id="vitals" ng-controller="BMRCtrl"></div>
+	<div id="vitals" ng-controller="Bmr"></div>
 	<div class="col-lg-4 col-md-6 col-sm-12 vitals">
 		<div class="panel panel-default">
 		<div class="panel-heading">Vitals Statistics</div>
 		<div class="panel-body">
 		<label>Blood Pressure Category:</label><span ng-show="systolic && diastolic">{{ bpRate() }}</span><br />
 		<label>Basal Metabolic Rate:</label><span>{{ calcBMR() | number:2 }}</span><br />
-		<label>Daily Kilocalorie Requirements:</label><span>{{ calcDKR() | number:2 }}</span><br />
+		<label ng-controller ="Dkr">Daily Kilocalorie Requirements:</label><span>{{ calcDKR() | number:2 }}</span><br />
 		<label>Target Heart Rate (50%-85%):</label><span>{{ rateTHR() }}</span>
 		</div>
 		</div>
@@ -174,15 +171,15 @@
         <script src="bower_components/angular-chart.js/angular-chart.js"></script>
 
     <!-- main module -->
-        <script src="core/main.module.js"></script>
+        <script src="healthapp.module.js"></script>
         <script src="core/core.module.js"></script>
 
 
     <!-- scripts -->
-        <script src="controllers/Bmi.js"></script>
-        <script src="controllers/Bmr.js"></script>
-        <script src="controllers/BpRate.js"></script>
-        <script src="controllers/Dkr.js"></script>
+        <script src="bmi/bmi.js"></script>
+        <script src="bmr/bmr.js"></script>
+        <script src="bprate/bp-rate.js"></script>
+        <script src="dkr/dkr.js"></script>
 
 </body>
 </html>
