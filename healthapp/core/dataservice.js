@@ -5,10 +5,14 @@
 		.module('app.core')
 		.factory('dataservice', dataservice);
 
+
+
 	function dataservice($scope) {
 
 		var service = {
-			calcBMI: calcBMI
+			calcBMI: calcBMI,
+            calcDKR: calcDKR,
+            calcBMR: calcBMR
 		}
 
         return service;

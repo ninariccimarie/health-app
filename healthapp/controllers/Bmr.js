@@ -5,6 +5,8 @@
 		.module('app.core')
 		.controller('Bmr', Bmr);
 
+        Bmr.$inject = ['dataservice'];
+
 		function Bmr(dataservice) {
 			var vm = this;
 			vm.bmr = [];
