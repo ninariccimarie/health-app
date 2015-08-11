@@ -1,12 +1,13 @@
 (function(){
 	'use strict';
 
-	var healthApp = angular.module('healthApp',['chart.js', 'ui.bootstrap']);
+    angular.module('app.core')
+        .controller('BpRate', bpRate);
 
-	healthApp.controller('BpRate', ['$scope',function($scope) {
+    bpRate.$inject = ['$scope'];
 
+    function bpRate($scope){
 
-$scope.bpRate = function(){
 		if ($scope.systolic <= 120 && $scope.diastolic <= 80) {
 			return ("Normal");
 		} else if ($scope.systolic >= 120 && $scope.systolic < 140 && $scope.diastolic >= 80 && $scope.diastolic < 90) {
@@ -17,8 +18,7 @@ $scope.bpRate = function(){
 			return ("High Blood Pressure (Hypertension) Stage 2");
 		} else if ($scope.systolic > 180 && $scope.diastolic > 110) {
 			return ("Hypertensive Crisis (Emergency care needed!)");
-		};
-	};
+		}
+	}
 
-	}]);
-});
+})();
