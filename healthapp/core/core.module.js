@@ -4,7 +4,6 @@
 	angular.module('app.core', [
 		'chart.js',
 		'ui.bootstrap',
-
 		'app.bmi',
 		'app.bmr',
 		'app.dkr',
