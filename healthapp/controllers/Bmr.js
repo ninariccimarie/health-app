@@ -5,7 +5,7 @@
 		.module('app.core')
 		.controller('Bmr', Bmr);
 
-		function bmr(dataservice) {
+		function Bmr(dataservice) {
 			var vm = this;
 			vm.bmr = [];
 			vm.title = "BMR";

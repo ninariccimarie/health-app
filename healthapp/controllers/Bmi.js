@@ -4,7 +4,7 @@
 	angular.module('app.core')
 		   .controller('Bmi', Bmi);
 
-		function bmi(dataservice) {
+		function Bmi(dataservice) {
 
 			var vm = this;
 			vm.bmi = [];
