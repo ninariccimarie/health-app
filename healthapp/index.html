@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en" ng-app="healthApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Health Calculator</title>
+	<link rel="stylesheet" href="../bower_components/angular-chart.js/dist/angular-chart.css">
+  	<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="../bower_components/rainbow/themes/github.css">
+  	<link href="../bower_components/angular-chart.js/examples/bootstrap.css" rel="stylesheet">
+  	<link href="../bower_components/angular-chart.js/examples/app.css" rel="stylesheet">
+  	<link rel="stylesheet" href="style.css">
+
+	<script src="../bower_components/angular/angular.js"></script>
+  	<script src="controllers/BmiController.js"></script>
+  	<script src="controllers/BmrController.js"></script>
+  	<script src="controllers/BpRateController.js"></script>
+  	<script src="controllers/DkrController.js"></script>
+
+
+  	<!-- chart -->
+  	<script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/Chart.js/Chart.js"></script>
+  <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="../bower_components/rainbow/js/rainbow.min.js"></script>
+  <script src="../bower_components/rainbow/js/language/generic.js"></script>
+  <script src="../bower_components/rainbow/js/language/html.js"></script>
+  <script src="../bower_components/rainbow/js/language/javascript.js"></script>
+  <script src="../bower_components/angular-chart.js/angular-chart.js"></script>
+  <!-- end chart -->
+</head>
+<body>
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container" ng-controller="MenuCtrl">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand visible-xs" href="#">Health Calculator</a>
+			</div>
+			<nav class="hidden-xs">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#top" role="button" class="navbar-brand">
+							Health Calculator
+						</a>
+					</li>
+					<li><a href="#BMI">BMI</a></li>
+					<li><a href="#vitals">Vitals</a></li>
+					<li><a href="#sleep">Sleep</a></li>
+					<li><a href="#emotion">Emotions</a></li>
+				</ul>
+			</nav>
+			<nav class="collapse" collapse="isCollapsed" style="height: 0px">
+				<ul class="nav navbar-nav">
+					<li><a href="#summary" ng-click="isCollapsed = !isCollapsed">Summary</a></li>
+					<li><a href="#lorem_ipsum" ng-click="isCollapsed = !isCollapsed">Lorem Ipsum</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<div id="user" ng-controller="BMICtrl">
+		<div class="col-lg-4 col-md-6 col-sm-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">Health Status</div>
+				<label>Age: </label>
+				<input type="text" ng-model="age" /><br />
+				<label>Gender: </label>
+				<input type="radio" ng-model="gender" value="male" />male
+				<input type="radio" ng-model="gender" value="female" />female<br />
+				<label>Enter your weight:</label>
+				<input type="text" ng-model="weight" placeholder="weight (lbs)" /><br />
+				<label>Enter your height:</label>
+				<input type="text" ng-model="height" placeholder="height (inches)" /><br />
+				<label>Pulse Rate</label>
+				<input type="text" ng-model="pulse" placeholder="beats per min" /><br />
+				<label>Respiration Rate</label>
+				<input type="text" ng-model="respiration" placeholder="breaths per min"><br />
+				<label>Blood Pressure</label>
+				<input type="text" ng-model="systolic" placeholder="systolic">/<input type="text" ng-model="diastolic" placeholder="diastolic"><br />
+				<label>Exercise level:</label>
+				<select ng-model="exercise" id="exercise">
+					<option value="1.2">little to none</option>
+					<option value="1.375">light exercise</option>
+					<option value="1.55">moderate exercise</option>
+					<option value="1.725">heavy exercise</option>
+					<option value="1.9">very heavy exercise</option>
+				</select>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-12 weight">
+				<div class="panel panel-default">
+					<div class="panel-heading">Weight</div>
+					<div class="panel=body">
+						<p> </p>
+						<span ng-show="weight"> {{ weight }} lbs</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-12 height">
+				<div class="panel panel-default">
+					<div class="panel-heading">Height</div>
+					<div class="panel=body">
+						<p> </p>
+						<span ng-show="height"> {{ height }} inches</span>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-4 col-md-6 col-sm-12 bmi">
+				<div class="panel panel-default">
+					<div class="panel-heading">Body Mass Index</div>
+					<div class="panel=body">
+						<p> </p>
+						<span ng-show="weight && height"> {{ calcBMI() | number:2}}, {{ rateBMI() }}</span>
+					</div>
+				</div>
+			</div>
+
+	<div id="vitals" ng-controller="BMRCtrl"></div>
+	<div class="col-lg-4 col-md-6 col-sm-12 vitals">
+		<div class="panel panel-default">
+		<div class="panel-heading">Vitals Statistics</div>
+		<div class="panel-body">
+		<label>Blood Pressure Category:</label><span ng-show="systolic && diastolic">{{ bpRate() }}</span><br />
+		<label>Basal Metabolic Rate:</label><span>{{ calcBMR() | number:2 }}</span><br />
+		<label>Daily Kilocalorie Requirements:</label><span>{{ calcDKR() | number:2 }}</span><br />
+		<label>Target Heart Rate (50%-85%):</label><span>{{ rateTHR() }}</span>
+		</div>
+		</div>
+	</div>
+	</div>
+
+	<div id="activities">
+	<div class="col-lg-6 col-sm-12" id="radar-chart" ng-controller="RadarCtrl">
+		<div class="panel panel-default">
+			<div class="panel-heading">Daily Activities</div>
+			<div class="panel-body">
+				<canvas id="area" class="chart chart-radar" data="data" labels="labels" click="onClick"></canvas>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" ng-controller="DataTablesCtrl">
+		<div class="col-lg-6 col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Chart Data</div>
+				<div class="panel-body">
+					<table class="table table-responsive table-condensed table-striped">
+						<tr>
+							<th ng-repeat="label in labels">{{label}}</th>
+						</tr>
+						<tr ng-repeat="dataSet in data">
+                  			<td ng-repeat="set in dataSet track by $index"><span style="text-align: right;">{{data[$parent.$index][$index]}}</span></td>
+                		</tr>
+					</table>
+					<button type="button" class="btn btn-primary pull-right" ng-click="randomize()">Randomize</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Weekly Number of Sleeping Hours in a Month</div>
+				<div class="panel-body">
+					<canvas id="tables" class="chart chart-line" data="data" labels="labels" colours="colours"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

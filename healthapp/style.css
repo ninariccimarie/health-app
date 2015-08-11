@@ -1,0 +1,19 @@
+#fitness {
+	padding: 30px 30px 30px 30px;
+}
+
+#fitness label{
+	padding: 20px 0 5px 20px;
+}
+
+.weight span{
+	font-size: 50px;
+}
+
+.height span{
+	font-size: 50px;
+}
+
+.bmi span{
+	font-size: 50px;
+}
