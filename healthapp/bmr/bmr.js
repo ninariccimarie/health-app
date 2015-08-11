@@ -5,14 +5,13 @@
 		.module('app.core')
 		.controller('Bmr', Bmr);
 
-		function Bmr(dataservice) {
-			var vm = this;
+		Bmr.$inject = ['dataservice', '$scope'];
 
-			function calcBMR() {
-				return dataservice.calcBMR().then(function(data) {
-					vm.bmr = data;
-					return vm.bmr;
-				});
+		function Bmr(dataservice,$scope) {
+			// var vm = this;
+
+			$scope.getBmr = function() {
+				$scope.answer = dataservice.calcBMR($scope.gender, $scope.weight, $scope.height, $scope.age);
 			}
 		}
 
