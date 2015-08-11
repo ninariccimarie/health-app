@@ -5,20 +5,15 @@
 		.module('app.core')
 		.controller('Bmi', Bmi);
 
-		Bmi.$inject = ['dataservice'];
+		Bmi.$inject = ['dataservice', '$scope'];
 
-		function Bmi(dataservice) {
+		function Bmi(dataservice,$scope) {
 
-			var vm = this;
+			//var vm = this;
 
-
-			function calcBMI() {
-				return dataservice.calcBMI().then(function(data) {
-					vm.bmi = calcBMI;
-					return vm.bmi;
-				});
-
-			}
+            $scope.getBmi = function(){
+                $scope.answer = dataservice.calcBMI($scope.weight, $scope.height);
+            }
 
 			function rateBMI() {
 				if (vm.bmi < 18.5) {

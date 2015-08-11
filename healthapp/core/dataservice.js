@@ -5,11 +5,32 @@
 		.module('app.core')
 		.factory('dataservice', function(){
 
-			function calcBMI() {
-				$scope.BMI = $scope.weight / ($scope.height * $scope.height) * 703;
-				var BMI = $scope.BMI;
-				return(BMI)
+
+			var service = {
+                calcBMI: calcBMI,
+                calcDKR: calcDKR,
+                calcBMR: calcBMR
+            };
+
+			
+            function calcBMI(weight, height) {
+				var bmi = (weight  / (height * height)) * 703;
+				return bmi ;
+
 			}
+
+			function calcBMR(gender, weight, height, age){
+				var BMR = this;
+
+				if (gender == 'male') {
+				BMR = 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age);
+				} else {
+				BMR = 655 + (4.35 * weight) + (4.7 * height) - (4.7 * age);
+				}
+				
+				return(BMR);
+
+				}
 
 			function calcDKR(){
 				$scope.DKR = $scope.BMR * $scope.exercise;
@@ -17,20 +38,7 @@
 				return(DKR);
 			}
 
-			function calcBMR(){
-				$scope.BMR = null;
-				var BMR = $scope.BMR;
-
-				if ($scope.gender == 'male') {
-				BMR = 66 + (6.23 * $scope.weight) + (12.7 * $scope.height) - (6.8 * $scope.age);
-				} else {
-				BMR = 655 + (4.35 * $scope.weight) + (4.7 * $scope.height) - (4.7 * $scope.age);
-				}
-				$scope.BMR = BMR;
-				return(BMR);
-				}
-
-		return('dataservice');
+            return service;
 
 		});
 })();
