@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6da8041a-263f-4146-a959-2ca022db5dfd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/healthapp/main.module.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/healthapp/controllers/Bmi.js" afterPath="$PROJECT_DIR$/healthapp/controllers/Bmi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/healthapp/controllers/Bmr.js" afterPath="$PROJECT_DIR$/healthapp/controllers/Bmr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/healthapp/controllers/BpRate.js" afterPath="$PROJECT_DIR$/healthapp/controllers/BpRate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/healthapp/controllers/Dkr.js" afterPath="$PROJECT_DIR$/healthapp/controllers/Dkr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/healthapp/core/dataservice.js" afterPath="$PROJECT_DIR$/healthapp/core/dataservice.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/healthapp/index.html" afterPath="$PROJECT_DIR$/healthapp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/healthapp/core/main.module.js" afterPath="$PROJECT_DIR$/healthapp/core/main.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/healthapp/controllers/services.js" afterPath="$PROJECT_DIR$/healthapp/controllers/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="health-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/healthapp/index.html">
+      <file leaf-file-name="angular-chart.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/healthapp/bower_components/angular-chart.js/dist/angular-chart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25661916">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -57,6 +48,7 @@
         <option value="$PROJECT_DIR$/healthapp/controllers/BpRate.js" />
         <option value="$PROJECT_DIR$/healthapp/controllers/services.js" />
         <option value="$PROJECT_DIR$/healthapp/index.html" />
+        <option value="$PROJECT_DIR$/healthapp/bower_components/angular-chart.js/dist/angular-chart.js" />
       </list>
     </option>
   </component>
@@ -134,6 +126,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="health-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="health-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="healthapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-chart.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -147,6 +161,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/healthapp/bower_components" />
       <recent name="$PROJECT_DIR$/healthapp/core" />
     </key>
   </component>
@@ -239,22 +254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/healthapp/core/dataservice.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14271556">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding>
-            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/healthapp/controllers/Dkr.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.089197226">
@@ -305,6 +304,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/healthapp/controllers/Bmi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30327058">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/healthapp/core/core.module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10703667">
@@ -325,27 +341,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/healthapp/controllers/Bmi.js">
+    <entry file="file://$PROJECT_DIR$/healthapp/core/dataservice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30327058">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.41030723">
+          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
           <folding>
-            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439259744004" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439259675036" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/healthapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25661916">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.091649696">
+          <caret line="5" column="71" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="71" />
+          <folding>
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439260549620" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/healthapp/bower_components/angular-chart.js/dist/angular-chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
