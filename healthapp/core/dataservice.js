@@ -6,7 +6,7 @@
 		.factory('dataservice', function(){
 
 			function calcBMI() {
-				$scope.BMI = ($scope.weight * 703) / $scope.height / $scope.height;
+				$scope.BMI = $scope.weight / ($scope.height * $scope.height) * 703;
 				var BMI = $scope.BMI;
 				return(BMI)
 			}
@@ -29,7 +29,7 @@
 				$scope.BMR = BMR;
 				return(BMR);
 				}
-				
+
 		return('dataservice');
 
 		});
