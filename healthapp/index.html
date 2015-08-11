@@ -108,14 +108,20 @@
 				</div>
 			</div>
 
-	<div id="vitals" ng-controller="Bmr"></div>
+	<div id="vitals"></div>
 	<div class="col-lg-4 col-md-6 col-sm-12 vitals">
 		<div class="panel panel-default">
 		<div class="panel-heading">Vitals Statistics</div>
 		<div class="panel-body">
-		<label>Blood Pressure Category:</label><span ng-show="systolic && diastolic">{{ bpRate() }}</span><br />
-		<label>Basal Metabolic Rate:</label><span>{{ calcBMR() | number:2 }}</span><br />
-		<label ng-controller ="Dkr">Daily Kilocalorie Requirements:</label><span>{{ calcDKR() | number:2 }}</span><br />
+		<div ng-controller ="BpRate">
+			<label>Blood Pressure Category:</label><span ng-show="systolic && diastolic">{{ bpRate() }}</span><br />
+		</div>
+		<div ng-controller ="Bmr">
+			<label>Basal Metabolic Rate:</label><span>{{ calcBMR() | number:2 }}</span><br />
+		</div>
+		<div ng-controller ="Dkr">
+		<label>Daily Kilocalorie Requirements:</label><span>{{ calcDKR() | number:2 }}</span><br />
+		</div>
 		<label>Target Heart Rate (50%-85%):</label><span>{{ rateTHR() }}</span>
 		</div>
 		</div>
