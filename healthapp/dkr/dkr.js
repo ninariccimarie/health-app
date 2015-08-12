@@ -3,18 +3,15 @@
 
 	angular
 		.module('app.core')
-		.controller('dkr', dkr);
+		.controller('Dkr', Dkr);
 
-		function dkr(dataservice) {
-			var vm = this;
-			vm.dkr = [];
-			vm.title = "DKR";
+		Dkr.$inject = ['dataservice', '$scope'];
 
-            function calcDKR() {
-                return dataservice.calcDKR().then(function(data) {
-                    vm.dkr = data;
-                    return vm.dkr;
-                })
-            }
+		function Dkr(dataservice,$scope) {
+			
+			$scope.getDkr = function() {
+				$scope.answer = dataservice.calcDKR($scope.calcBMR, $scope.exercise);
+			}
+
         }
 })();
