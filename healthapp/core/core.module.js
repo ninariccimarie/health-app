@@ -3,6 +3,6 @@
 
 	angular.module('app.core', [
 		'chart.js',
-		'ui.bootstrap',
+		'ui.bootstrap'
 		]);
 })();

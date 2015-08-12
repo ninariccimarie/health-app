@@ -72,7 +72,6 @@
 					<option value="1.725">heavy exercise</option>
 					<option value="1.9">very heavy exercise</option>
 				</select>
-                    {{exercise}}
 				</div>
 			</div>
 
@@ -103,7 +102,7 @@
 						<div class="panel-heading">Body Mass Index</div>
 						<div class="panel=body">
 							<p> </p>
-							<span ng-show="answer"> {{ answer | number:2}}, {{ getRateBmi() }}</span>
+							<span ng-show="answer"> {{ answer | number:2}}, {{ result }}</span>
 						</div>
 					</div>
 				</div>
@@ -111,26 +110,25 @@
                 <button ng-click="getBmi()">Compute</button>
 			</div>
 
-	<div id="vitals"></div>
-	<div class="col-lg-4 col-md-6 col-sm-12 vitals">
-		<div class="panel panel-default">
-		<div class="panel-heading">Vitals Statistics</div>
-		<div class="panel-body">
-		<div ng-controller="BpRate">
-			<label>Blood Pressure Category:</label><span ng-show="systolic && diastolic">{{ getBpRate() }}</span><br />
+		<div id="vitals"></div>
+		<div class="col-lg-4 col-md-6 col-sm-12 vitals">
+			<div class="panel panel-default">
+			<div class="panel-heading">Vitals Statistics</div>
+				<div class="panel-body">
+					<div ng-controller="BpRate">
+						<label>Blood Pressure Category:</label><span ng-show="systolic && diastolic">{{ getBpRate() }}</span><br />
+					</div>
+					<div ng-controller="Bmr">
+						<label>Basal Metabolic Rate:</label><span> <strong>{{ answer | number:2 }}</strong></span><br />
+						<button ng-click="getBmr()">Compute</button>
+					</div>
+					<div ng-controller="Dkr">
+					<label>Daily Kilocalorie Requirements:</label><span><strong>{{ answer | number:2 }}</strong></span><br />
+					<button ng-click="getDkr()">Compute</button>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div ng-controller="Bmr">
-			<label>Basal Metabolic Rate:</label><span> <strong>{{ answer | number:2 }}</strong></span><br />
-			<button ng-click="getBmr()">Compute</button>
-		</div>
-		<div ng-controller="Dkr">
-		<label>Daily Kilocalorie Requirements:</label><span><strong>{{ answer | number:2 }}</strong></span><br />
-		<button ng-click="getDkr()">Compute</button>
-		</div>
-		<label>Target Heart Rate (50%-85%):</label><span>{{ rateTHR() }}</span>
-		</div>
-		</div>
-	</div>
 	</div>
 
 	<div id="activities">
