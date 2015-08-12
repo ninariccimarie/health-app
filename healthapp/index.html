@@ -6,8 +6,8 @@
 	<link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
   	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
   	<link rel="stylesheet" href="bower_components/rainbow/themes/github.css">
-  	<!--<link href="bower_components/angular-chart.js/examples/bootstrap.css" rel="stylesheet">
-  	<link href="bower_components/angular-chart.js/examples/app.css" rel="stylesheet">-->
+  	<link rel="stylesheet" href="bower_components/angular-chart.js/examples/bootstrap.css">
+  	<link rel="stylesheet" href="bower_components/angular-chart.js/examples/app.css">
   	<link rel="stylesheet" href="style.css">
 
 </head>
@@ -132,16 +132,16 @@
 	</div>
 
 	<div id="activities">
-	<!-- <div class="col-lg-6 col-sm-12" id="radar-chart" ng-controller="RadarCtrl">
+	<div class="col-lg-6 col-sm-12" id="radar-chart" ng-controller="Radar">
 		<div class="panel panel-default">
 			<div class="panel-heading">Daily Activities</div>
 			<div class="panel-body">
 				<canvas id="area" class="chart chart-radar" data="data" labels="labels" click="onClick"></canvas>
 			</div>
 		</div>
-	</div> -->
+	</div>
 
-	<!-- <div class="row" ng-controller="DataTablesCtrl">
+	<div class="row" ng-controller="Line">
 		<div class="col-lg-6 col-sm-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">Chart Data</div>
@@ -166,7 +166,7 @@
 				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 	</div>
 
     <!-- angular dependency -->
@@ -188,6 +188,8 @@
         <script src="bmr/bmr.js"></script>
         <script src="bprate/bp-rate.js"></script>
         <script src="dkr/dkr.js"></script>
+        <script src="graphs/radar.js"></script>
+        <script src="graphs/line.js"></script>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
   'use strict';
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../angular/angular', 'chart.js'], factory);
+    define(['angular', 'chart.js'], factory);
   } else if (typeof exports === 'object') {
     // Node/CommonJS
     module.exports = factory(require('angular'), require('chart.js'));
@@ -25,12 +25,6 @@
     '#949FB1', // grey
     '#4D5360'  // dark grey
   ];
-
-  var usingExcanvas = typeof window.G_vmlCanvasManager === 'object' &&
-    window.G_vmlCanvasManager !== null &&
-    typeof window.G_vmlCanvasManager.initElement === 'function';
-
-  if (usingExcanvas) Chart.defaults.global.animation = false;
 
   angular.module('chart.js', [])
     .provider('ChartJs', ChartJsProvider)
@@ -103,7 +97,11 @@
           elem.replaceWith(container);
           container.appendChild(elem[0]);
 
-          if (usingExcanvas) window.G_vmlCanvasManager.initElement(elem[0]);
+          if (typeof window.G_vmlCanvasManager === 'object' && window.G_vmlCanvasManager !== null) {
+            if (typeof window.G_vmlCanvasManager.initElement === 'function') {
+              window.G_vmlCanvasManager.initElement(elem[0]);
+            }
+          }
 
           // Order of setting "watch" matter
 
@@ -113,7 +111,7 @@
             if (! chartType) return;
 
             if (chart) {
-              if (canUpdateChart(newVal, oldVal)) return updateChart(chart, newVal, scope, elem);
+              if (canUpdateChart(newVal, oldVal)) return updateChart(chart, newVal, scope);
               chart.destroy();
             }
 
@@ -155,8 +153,7 @@
     function canUpdateChart (newVal, oldVal) {
       if (newVal && oldVal && newVal.length && oldVal.length) {
         return Array.isArray(newVal[0]) ?
-        newVal.length === oldVal.length && newVal.every(function (element, index) {
-          return element.length === oldVal[index].length;}) :
+        newVal.length === oldVal.length && newVal[0].length === oldVal[0].length :
           oldVal.reduce(sum, 0) > 0 ? newVal.length === oldVal.length : false;
       }
       return false;
@@ -234,12 +231,7 @@
     }
 
     function rgba (colour, alpha) {
-      if (usingExcanvas) {
-        // rgba not supported by IE8
-        return 'rgb(' + colour.join(',') + ')';
-      } else {
-        return 'rgba(' + colour.concat(alpha).join(',') + ')';
-      }
+      return 'rgba(' + colour.concat(alpha).join(',') + ')';
     }
 
     // Credit: http://stackoverflow.com/a/11508164/1190235
@@ -283,7 +275,7 @@
       else $parent.append(legend);
     }
 
-    function updateChart (chart, values, scope, elem) {
+    function updateChart (chart, values, scope) {
       if (Array.isArray(scope.data[0])) {
         chart.datasets.forEach(function (dataset, i) {
           (dataset.points || dataset.bars).forEach(function (dataItem, j) {
@@ -297,7 +289,6 @@
       }
       chart.update();
       scope.$emit('update', chart);
-      if (scope.legend && scope.legend !== 'false') setLegend(elem, chart);
     }
 
     function isEmpty (value) {
