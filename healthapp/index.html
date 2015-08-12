@@ -72,6 +72,7 @@
 					<option value="1.725">heavy exercise</option>
 					<option value="1.9">very heavy exercise</option>
 				</select>
+                    {{exercise}}
 				</div>
 			</div>
 
@@ -102,7 +103,7 @@
 						<div class="panel-heading">Body Mass Index</div>
 						<div class="panel=body">
 							<p> </p>
-							<span ng-show="weight && height"> {{ answer | number:2}}, {{ rateBMI() }}</span>
+							<span ng-show="answer"> {{ answer | number:2}}, {{ rateBMI() }}</span>
 						</div>
 					</div>
 				</div>
@@ -115,15 +116,15 @@
 		<div class="panel panel-default">
 		<div class="panel-heading">Vitals Statistics</div>
 		<div class="panel-body">
-		<div ng-controller ="BpRate">
+		<div ng-controller="BpRate">
 			<label>Blood Pressure Category:</label><span ng-show="systolic && diastolic">{{ bpRate() }}</span><br />
 		</div>
-		<div ng-controller ="Bmr">
-			<label>Basal Metabolic Rate:</label><span>{{ answer | number:2 }}</span><br />
+		<div ng-controller="Bmr">
+			<label>Basal Metabolic Rate:</label><span> <strong>{{ answer | number:2 }}</strong></span><br />
 			<button ng-click="getBmr()">Compute</button>
 		</div>
-		<div ng-controller ="Dkr">
-		<label>Daily Kilocalorie Requirements:</label><span>{{ answer | number:2 }}</span><br />
+		<div ng-controller="Dkr">
+		<label>Daily Kilocalorie Requirements:</label><span><strong>{{ answer | number:2 }}</strong></span><br />
 		<button ng-click="getDkr()">Compute</button>
 		</div>
 		<label>Target Heart Rate (50%-85%):</label><span>{{ rateTHR() }}</span>

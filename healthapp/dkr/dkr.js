@@ -7,11 +7,13 @@
 
 		Dkr.$inject = ['dataservice', '$scope'];
 
-		function Dkr(dataservice,$scope) {
-			
-			$scope.getDkr = function() {
-				$scope.answer = dataservice.calcDKR($scope.calcBMR, $scope.exercise);
-			}
+		function Dkr(dataservice, $scope) {
 
+
+
+			$scope.getDkr = function() {
+				$scope.answer = dataservice.calcDKR(dataservice.calcBMR($scope.gender, $scope.weight, $scope.height, $scope.age), $scope.exercise);
+                console.log("Good!");
+			}
         }
 })();

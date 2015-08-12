@@ -16,30 +16,23 @@
             function calcBMI(weight, height) {
                 var bmi = (weight / (height * height)) * 703;
                 return bmi;
-
             }
 
             function calcBMR(gender, weight, height, age){
-                var bmr = this;
-
+                var bmr;
                 if (gender == 'male') {
                     bmr = 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age);
                 } else {
                     bmr = 655 + (4.35 * weight) + (4.7 * height) - (4.7 * age);
                 }
-                return(bmr);
+                return bmr;
             }
 
-
-			function calcDKR(exercise,$scope){
-				var dkr = this;
-				$scope.calcBMR = calcBMR;
-
-				dkr = calcBMR * exercise;
-				return(dkr);
+			function calcDKR(bmr, exercise){
+				var dkr;
+				dkr = bmr * exercise;
+				return dkr;
 			}
-
             return service;
-
 		});
 })();
