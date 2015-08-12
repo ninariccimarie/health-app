@@ -10,10 +10,23 @@
 		function Bmi(dataservice,$scope) {
 
             $scope.getBmi = function(){
-                $scope.answer = dataservice.calcBMI($scope.weight, $scope.height);
-            }
+                 $scope.result = '';
 
-			function rateBMI() {
+                 $scope.answer = dataservice.calcBMI($scope.weight, $scope.height);
+                
+                    if($scope.answer < 18.5){
+                        $scope.result = "Underweight";
+                    }else if ($scope.answer >= 18.5 && $scope.answer < 25) {
+                        $scope.result = "Normal";
+                    } else if ($scope.answer >= 25 && $scope.answer < 30) {
+                        $scope.result = "Overweight";
+                    } else {
+                        $scope.result = "Obese";
+                    }
+                return $scope.result;
+            };
+
+			/*function rateBMI() {
 				if ( getBmi < 18.5) {
 					return ("Underweight");
 				} else if (getBmi >= 18.5 && getBmi < 25) {
@@ -21,9 +34,9 @@
 				} else if (getBmi >= 25 && getBmi < 30) {
 					return ("Overweight");
 				} else {
-					return ("Obese");
-				};
-			};
+                    return ("Obese");
+                }
+			}*/
 
 		}
 
