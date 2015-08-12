@@ -116,7 +116,7 @@
 		<div class="panel-heading">Vitals Statistics</div>
 		<div class="panel-body">
 		<div ng-controller="BpRate">
-			<label>Blood Pressure Category:</label><span ng-show="systolic && diastolic">{{ bpRate() }}</span><br />
+			<label>Blood Pressure Category:</label><span ng-show="systolic && diastolic">{{ getBpRate() }}</span><br />
 		</div>
 		<div ng-controller="Bmr">
 			<label>Basal Metabolic Rate:</label><span> <strong>{{ answer | number:2 }}</strong></span><br />
