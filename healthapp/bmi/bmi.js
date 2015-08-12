@@ -13,7 +13,7 @@
                 $scope.answer = dataservice.calcBMI($scope.weight, $scope.height);
             }
 
-			function rateBMI() {
+			$scope.getRateBmi = function() {
 				if ( getBmi < 18.5) {
 					return ("Underweight");
 				} else if (getBmi >= 18.5 && getBmi < 25) {
