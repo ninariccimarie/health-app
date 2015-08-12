@@ -8,12 +8,12 @@
 		function Bmr(dataservice) {
 			var vm = this;
 
-			function calcBMR() {
+			/*function calcBMR() {
 				return dataservice.calcBMR().then(function(data) {
 					vm.bmr = data;
 					return vm.bmr;
 				});
-			}
+			}*/
 		}
 
 })();
