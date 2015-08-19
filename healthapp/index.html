@@ -45,7 +45,7 @@
 		</div>
 	</div>
 
-	<div id="user">
+	<div id="user" ng-controller="Bmi">
 		<div class="col-lg-4 col-md-6 col-sm-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">Health Status</div>
@@ -72,10 +72,13 @@
 					<option value="1.725">heavy exercise</option>
 					<option value="1.9">very heavy exercise</option>
 				</select>
+                    <div>
+                        <button class="btn btn-primary" ng-click="compute()">Compute All</button>
+                    </div>
 				</div>
 			</div>
 
-			<div ng-controller="Bmi">
+			<div>
 				<div class="col-lg-4 col-md-6 col-sm-12 weight">
 					<div class="panel panel-default">
 						<div class="panel-heading">Weight</div>
@@ -106,8 +109,6 @@
 						</div>
 					</div>
 				</div>
-
-                <button ng-click="getBmi()">Compute</button>
 			</div>
 
 
@@ -116,16 +117,14 @@
 		<div class="panel panel-default">
             <div class="panel-heading">Vitals Statistics</div>
             <div class="panel-body">
-            <div ng-controller="BpRate">
+            <div>
                 <label>Blood Pressure Category:</label><span ng-show="systolic && diastolic">{{ getBpRate() }}</span><br />
             </div>
-            <div ng-controller="Bmr">
+            <div>
                 <label>Basal Metabolic Rate:</label><span> <strong>{{ answer | number:2 }}</strong></span><br />
-                <button ng-click="getBmr()">Compute</button>
             </div>
-            <div ng-controller="Dkr">
+            <div>
             <label>Daily Kilocalorie Requirements:</label><span><strong>{{ answer | number:2 }}</strong></span><br />
-            <button ng-click="getDkr()">Compute</button>
             </div>
             </div>
 	    </div>
